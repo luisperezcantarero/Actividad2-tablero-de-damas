@@ -52,14 +52,14 @@ include 'conf.php';
                 } else {
                     $color = 'black';
                 }
-                // Colocando las fichas
-                // Comprueba si la fila es mayor a 5 ya que la tabla se crea en orden descendente
-                if ($color == 'black' && $i > 5) {
-                    $ficha = '<img src="ficha_negra.png"></td>'; // Ficha negra
-                } elseif ($color == 'black' && $i < 4) {
-                    $ficha = '<img src="ficha_roja.png"></td>'; // Ficha roja
-                } else {
-                    $ficha = ''; // Si la casilla no es negra, se deja vacía
+                $ficha = ''; // Colocando las fichas
+                // Comprueba si la fila es mayor a 5 ya que la tabla se crea en orde descendente
+                if ($color == 'black') {
+                    if ($i > 5) {
+                        $ficha = '<img src="ficha_negra.png">';
+                    } elseif ($i < 4) {
+                        $ficha = '<img src="ficha_roja.png">';
+                    }
                 }
                 echo '<td class="', $color,'">', $ficha,'</td>';
             }
